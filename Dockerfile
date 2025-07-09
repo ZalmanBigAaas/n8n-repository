@@ -1,5 +1,5 @@
-# Use a specific, existing n8n version.
-FROM n8nio/n8n:1.23.0
+# Use the correct, modern n8n version.
+FROM n8nio/n8n:1.101.1
 
 # Switch to root to install things
 USER root
