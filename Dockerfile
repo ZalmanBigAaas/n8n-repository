@@ -16,8 +16,8 @@ USER node
 # 4. Go into our new custom folder
 WORKDIR /home/node/.n8n/custom
 
-# 5. Install sharp here. It will be placed in the node_modules subdirectory.
-RUN npm install sharp
+# 5. THE CRITICAL CHANGE: Install sharp from source to guarantee compatibility
+RUN npm install sharp --build-from-source
 
 # 6. Reset the working directory for the main n8n process to start correctly
 WORKDIR /home/node
