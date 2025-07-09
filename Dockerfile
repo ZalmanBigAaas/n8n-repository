@@ -7,5 +7,4 @@ USER root
 # Install the required build tools and libraries for sharp on Debian
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential libvips-dev
 
-# Switch back to the non-root n8n user for security
-USER node
+# The container will automatically switch back to the 'node' user on startup.
