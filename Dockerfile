@@ -1,5 +1,6 @@
-# Use a stable, specific version of the n8n Alpine image
-FROM n8nio/n8n:1-alpine
+# Use a specific, existing n8n version. As of now, 1.23.0 is a recent stable version.
+# This IS the Alpine image.
+FROM n8nio/n8n:latest
 
 # Switch to the root user to install system and pnpm packages
 USER root
@@ -7,12 +8,10 @@ USER root
 # 1. Install system dependencies required by sharp
 RUN apk add --no-cache vips-dev build-base python3
 
-# 2. Set the working directory to n8n's root folder where its package.json lives
+# 2. Set the working directory to n8n's root folder
 WORKDIR /usr/local/lib/node_modules/n8n
 
-# 3. CRITICAL: Use pnpm to install sharp. This matches n8n's package manager.
-#    This command ensures sharp is compiled against the libraries we just installed
-#    and placed in the correct pnpm store for the app to find.
+# 3. Use pnpm (n8n's native package manager) to install sharp
 RUN pnpm install sharp
 
 # 4. Switch back to the default non-root user for running n8n
