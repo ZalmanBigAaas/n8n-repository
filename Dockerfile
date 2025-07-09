@@ -1,5 +1,5 @@
 # Use the Debian-based n8n image for better compatibility
-FROM n8nio/n8n:1.102.0-debian
+FROM n8nio/n8n:latest-debian
 
 # Switch to the root user to install system dependencies
 USER root
