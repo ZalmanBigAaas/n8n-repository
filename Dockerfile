@@ -1,5 +1,5 @@
 # Use a specific, existing n8n version. This IS the Alpine image.
-FROM n8nio/n8n:1.23.0
+FROM n8nio/n8n:latest
 
 # Switch to the root user to install system and packages
 USER root
