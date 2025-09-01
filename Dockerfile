@@ -6,8 +6,8 @@ FROM n8nio/n8n:latest
 # 2. Switch to the root user to install software
 USER root
 
-# 3. Install Python and pip
-RUN apk add --no-cache python3 py3-pip curl
+# 3. Install Python, pip, curl, AND the ca-certificates package
+RUN apk add --no-cache python3 py3-pip curl ca-certificates
 
 # 4. Copy your files into the container
 COPY ./requirements.txt /home/node/requirements.txt
