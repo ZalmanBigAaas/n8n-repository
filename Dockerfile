@@ -7,7 +7,7 @@ FROM n8nio/n8n:latest
 USER root
 
 # 3. Install Python and pip
-RUN apk add --no-cache python3 py3-pip
+RUN apk add --no-cache python3 py3-pip curl
 
 # 4. Copy your files into the container
 COPY ./requirements.txt /home/node/requirements.txt
